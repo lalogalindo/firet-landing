@@ -3,22 +3,23 @@ import { motion } from 'framer-motion';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { faChevronRight } from '@fortawesome/free-solid-svg-icons';
+import heroBackground from '../assets/hero-background.png';
 
 const Hero = () => {
   return (
     <section id="inicio" className="relative h-screen flex items-center overflow-hidden">
       {/* Background Image with Overlay */}
-      <div 
+      <div
         className="absolute inset-0 z-0 bg-cover bg-center"
-        style={{ 
-          backgroundImage: `url('https://picsum.photos/id/191/1920/1080')`,
+        style={{
+          backgroundImage: `url('${heroBackground}')`,
         }}
       >
         <div className="absolute inset-0 bg-gradient-to-r from-black/60 to-transparent"></div>
       </div>
 
       <div className="container mx-auto px-6 relative z-10">
-        <motion.div 
+        <motion.div
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
@@ -33,7 +34,7 @@ const Hero = () => {
           <p className="text-lg md:text-xl text-gray-200 mb-8 max-w-lg">
             Expertos en rehabilitación física enfocados en brindarte seguridad, limpieza y la confianza que tu cuerpo necesita para sanar.
           </p>
-          
+
           <div className="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
             <a
               href="https://wa.me/522462966540"
@@ -56,10 +57,10 @@ const Hero = () => {
           <div className="mt-12 flex items-center space-x-6">
             <div className="flex -space-x-2">
               {[1, 2, 3, 4].map((i) => (
-                <img 
+                <img
                   key={i}
-                  src={`https://picsum.photos/id/${i + 60}/100/100`} 
-                  alt="Patient" 
+                  src={`https://picsum.photos/id/${i + 60}/100/100`}
+                  alt="Patient"
                   className="w-10 h-10 rounded-full border-2 border-white object-cover"
                 />
               ))}

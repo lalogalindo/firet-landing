@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
+import logo from '../assets/firet-logo-h.png';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -25,10 +26,12 @@ const Navbar = () => {
   return (
     <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'glass py-2' : 'bg-transparent py-4'}`}>
       <div className="container mx-auto px-6 flex justify-between items-center">
-        <div className="flex items-center space-x-2">
-          {/* Logo Placeholder */}
-          <div className="w-10 h-10 bg-primary-green rounded-full flex items-center justify-center text-white font-bold text-xl">F</div>
-          <span className={`text-2xl font-bold ${isScrolled ? 'text-primary-blue' : 'text-white'}`}>Firet</span>
+        <div className="flex items-center">
+          <img 
+            src={logo} 
+            alt="Firet Fisioterapia" 
+            className={`h-12 md:h-16 w-auto transition-all ${isScrolled ? 'brightness-100' : 'brightness-0 invert'}`} 
+          />
         </div>
 
         {/* Desktop Menu */}
