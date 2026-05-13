@@ -54,7 +54,7 @@ const Hero = () => {
             </a>
           </div>
 
-          <div className="mt-12 flex items-center space-x-6">
+          <div className="mt-12 flex flex-col sm:flex-row items-center sm:space-x-6 space-y-4 sm:space-y-0">
             <div className="flex -space-x-2">
               {[1, 2, 3, 4].map((i) => (
                 <img
@@ -65,7 +65,7 @@ const Hero = () => {
                 />
               ))}
             </div>
-            <p className="text-sm text-gray-300">
+            <p className="text-sm text-gray-300 text-center sm:text-left">
               <span className="text-white font-bold">+500 pacientes</span> han recuperado su bienestar con nosotros.
             </p>
           </div>

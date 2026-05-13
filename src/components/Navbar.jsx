@@ -1,19 +1,32 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
+import { faWhatsapp, faFacebook } from '@fortawesome/free-brands-svg-icons';
 import { faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import logo from '../assets/firet-logo-h.png';
 
 const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const navRef = useRef(null);
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
     };
+
+    const handleClickOutside = (event) => {
+      if (navRef.current && !navRef.current.contains(event.target)) {
+        setIsMenuOpen(false);
+      }
+    };
+
     window.addEventListener('scroll', handleScroll);
-    return () => window.removeEventListener('scroll', handleScroll);
+    document.addEventListener('mousedown', handleClickOutside);
+    
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      document.removeEventListener('mousedown', handleClickOutside);
+    };
   }, []);
 
   const navLinks = [
@@ -24,7 +37,10 @@ const Navbar = () => {
   ];
 
   return (
-    <nav className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'glass py-2' : 'bg-transparent py-4'}`}>
+    <nav 
+      ref={navRef}
+      className={`fixed w-full z-50 transition-all duration-300 ${isScrolled ? 'glass py-2' : 'bg-transparent py-4'}`}
+    >
       <div className="container mx-auto px-6 flex justify-between items-center">
         <div className="flex items-center">
           <img 
@@ -45,6 +61,15 @@ const Navbar = () => {
               {link.name}
             </a>
           ))}
+          <a
+            href="https://www.facebook.com/firetfisioterapiayrehabilitacionmichelleaguirre"
+            target="_blank"
+            rel="noopener noreferrer"
+            className={`text-xl transition-colors hover:text-primary-blue ${isScrolled ? 'text-gray-700' : 'text-white'}`}
+            title="Facebook"
+          >
+            <FontAwesomeIcon icon={faFacebook} />
+          </a>
           <a
             href="https://wa.me/522462966540"
             target="_blank"
@@ -80,6 +105,22 @@ const Navbar = () => {
               {link.name}
             </a>
           ))}
+          <div className="flex space-x-6 py-2">
+            <a
+              href="https://www.facebook.com/firetfisioterapiayrehabilitacionmichelleaguirre"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-gray-700 text-2xl hover:text-primary-blue"
+            >
+              <FontAwesomeIcon icon={faFacebook} />
+            </a>
+            <a
+              href="#"
+              className="text-gray-700 text-2xl hover:text-primary-blue"
+            >
+              <FontAwesomeIcon icon={faInstagram} />
+            </a>
+          </div>
           <a
             href="https://wa.me/522462966540"
             target="_blank"

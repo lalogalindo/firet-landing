@@ -1,6 +1,8 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faShieldAlt, faSprayCan, faAward, faCheckCircle } from '@fortawesome/free-solid-svg-icons';
+import promo1 from '../assets/promo-1.jpg';
+import promo2 from '../assets/promo-2.jpg';
 
 const TrustSection = () => {
   return (
@@ -64,14 +66,14 @@ const TrustSection = () => {
           <div className="lg:w-1/2 relative">
             <div className="grid grid-cols-2 gap-4">
               <img 
-                src="https://picsum.photos/id/352/400/600" 
-                alt="Clinic Interior" 
-                className="rounded-3xl shadow-2xl transform translate-y-8"
+                src={promo1} 
+                alt="Instalaciones Firet" 
+                className="rounded-3xl shadow-2xl transform translate-y-8 object-cover h-[400px] w-full"
               />
               <img 
-                src="https://picsum.photos/id/366/400/600" 
-                alt="Therapy Session" 
-                className="rounded-3xl shadow-2xl"
+                src={promo2} 
+                alt="Terapia en Firet" 
+                className="rounded-3xl shadow-2xl object-cover h-[400px] w-full"
               />
             </div>
             <div className="absolute -bottom-6 -right-6 bg-white p-8 rounded-3xl shadow-2xl hidden md:block">

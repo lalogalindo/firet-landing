@@ -18,7 +18,12 @@ const Footer = () => {
               Cuidamos de ti con profesionalismo, higiene y calidez humana. Tu recuperación es nuestra misión.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-primary-blue transition-all">
+              <a
+                href="https://www.facebook.com/firetfisioterapiayrehabilitacionmichelleaguirre"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-primary-blue transition-all"
+              >
                 <FontAwesomeIcon icon={faFacebook} />
               </a>
               <a href="#" className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center hover:bg-primary-blue transition-all">
