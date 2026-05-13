@@ -81,8 +81,16 @@ const Navbar = () => {
           </a>
         </div>
 
-        {/* Mobile Menu Button */}
-        <div className="md:hidden">
+        {/* Mobile Menu CTA and Toggle */}
+        <div className="flex items-center space-x-4 md:hidden">
+          <a
+            href="https://wa.me/522462966540"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="bg-primary-green text-white px-4 py-2 rounded-full font-bold text-sm shadow-md"
+          >
+            Agendar
+          </a>
           <button
             onClick={() => setIsMenuOpen(!isMenuOpen)}
             className={`${isScrolled ? 'text-gray-700' : 'text-white'}`}
@@ -121,15 +129,6 @@ const Navbar = () => {
               <FontAwesomeIcon icon={faInstagram} />
             </a>
           </div>
-          <a
-            href="https://wa.me/522462966540"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="bg-primary-green text-white px-6 py-3 rounded-full font-bold flex items-center justify-center space-x-2 shadow-md"
-          >
-            <FontAwesomeIcon icon={faWhatsapp} />
-            <span>Agendar Cita</span>
-          </a>
         </div>
       )}
     </nav>
